@@ -51,10 +51,18 @@ function App() {
       </header>
       <div id="tabs">
         <menu>
-          <button onClick={() => setActiveContentIndex(0)}>Why React?</button>
-          <button onClick={() => setActiveContentIndex(1)}>Core Features</button>
-          <button onClick={() => setActiveContentIndex(2)}>Related Resources</button>
-          <button onClick={() => setActiveContentIndex(3)}>React vs. Vanilla</button>
+          <button className={activeContentIndex === 0 ? "active" : ""} 
+                  onClick={() => setActiveContentIndex(0)}>Why React?
+          </button>
+          <button className={activeContentIndex === 1 ? "active" : ""} 
+                  onClick={() => setActiveContentIndex(1)}>Core Features
+          </button>
+          <button className={activeContentIndex === 2 ? "active" : ""} 
+                  onClick={() => setActiveContentIndex(2)}>Related Resources
+          </button>
+          <button className={activeContentIndex === 3 ? "active" : ""} 
+                  onClick={() => setActiveContentIndex(3)}>React vs. Vanilla
+          </button>
           
         </menu>
 
