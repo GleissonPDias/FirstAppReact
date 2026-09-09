@@ -1,5 +1,8 @@
 import './styles.css'
+import { useState } from "react";
 import reactLogo from './assets/react-logo.png'
+
+
 
 const content = [
   [
@@ -30,6 +33,12 @@ const content = [
 
 function App() {
   
+  //Criar estados
+  // const[estado, função que altera o estado da aplicacão] = useState(valorInicial)
+  const [activeContentIndex, setActiveContentIndex] = useState(0);
+
+  
+  
 
   return (
     <div>
@@ -42,14 +51,16 @@ function App() {
       </header>
       <div id="tabs">
         <menu>
-          <button>Why React?</button>
-          <button>Core Features</button>
-          <button>Related Resources</button>
+          <button onClick={() => setActiveContentIndex(0)}>Why React?</button>
+          <button onClick={() => setActiveContentIndex(1)}>Core Features</button>
+          <button onClick={() => setActiveContentIndex(2)}>Related Resources</button>
+          <button onClick={() => setActiveContentIndex(3)}>React vs. Vanilla</button>
+          
         </menu>
 
         <div id="tab-content">
           <ul>
-            {content[0].map((item) => (
+            {content[activeContentIndex].map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
