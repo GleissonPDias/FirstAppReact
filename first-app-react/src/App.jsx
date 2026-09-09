@@ -1,3 +1,4 @@
+import './styles.css'
 import reactLogo from './assets/react-logo.png'
 // const content = [
 
